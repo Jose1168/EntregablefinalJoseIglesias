@@ -1,0 +1,32 @@
+CREATE TABLE client (
+  	id INT AUTO_INCREMENT NOT NULL,
+	firstname VARCHAR(75) NOT NULL,
+	lastname VARCHAR(75) NOT NULL,
+	dni INT NOT NULL,
+	PRIMARY KEY (id)
+);
+CREATE TABLE invoice (
+  	id INT AUTO_INCREMENT NOT NULL,
+	created_at DATETIME NOT NULL,
+	total FLOAT NOT NULL,
+	client_id INT NOT NULL,
+  	PRIMARY KEY (id)
+);
+CREATE TABLE invoice_detail (
+	id INT AUTO_INCREMENT NOT NULL,
+	price FLOAT NOT NULL,
+	quantity INT NOT NULL,
+	invoice_id INT NOT NULL,
+	product_id INT NOT NULL,
+	PRIMARY KEY (id)
+);
+CREATE TABLE product (
+	id INT AUTO_INCREMENT NOT NULL,
+	deleted_at DATETIME NOT NULL,
+	description VARCHAR(255) NOT NULL,
+	price FLOAT NOT NULL,
+	sku VARCHAR(50) NOT NULL,
+	stock INT NOT NULL,
+	title VARCHAR(150),
+	PRIMARY KEY (id)
+);
